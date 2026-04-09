@@ -1,0 +1,54 @@
+class Solution:
+    def isAnagram(self, s: str, t: str) -> bool:
+        # return sorted(s) == sorted(t)
+        if len(s) != len(t):
+            return False
+
+        counts = [0]*26
+        countt = [0]*26 
+        for i in range(len(s)):
+            counts[ord(s[i]) - ord('a')] += 1
+            countt[ord(t[i]) - ord('a')] += 1
+        
+        if counts != countt:
+            return False
+        return True
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        # if len(s)!=len(t):
+        #     return False
+        
+        # counts, countt = {}, {}
+        # for i in range(len(s)):
+        #     counts[s[i]] = 1 + counts.get(s[i], 0)
+        #     countt[t[i]] = 1 + countt.get(t[i], 0)
+        
+        # for c in counts:
+        #     if counts[c] != countt.get(c, 0):
+        #         return False
+        # return True
+
+
+
+        # return True if sorted(s)==sorted(t) else False
+        
